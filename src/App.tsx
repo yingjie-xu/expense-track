@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { Button } from 'antd';
 import './App.less';
+import AppRouter from './router/AppRouter';
 
 const App: FC = () => (
   <div className="App">
-    <Button type="primary">Button</Button>
+    <AppRouter />
   </div>
 );
 
