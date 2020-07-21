@@ -1,0 +1,11 @@
+import { createStore, combineReducers } from 'redux';
+import expenseReducer from './reducers/ExpenseReducer';
+import filterReducer from './reducers/FilterReducer';
+
+export default () => {
+  const store = createStore(combineReducers({
+    expenses: expenseReducer,
+    filters: filterReducer
+  }), (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__());
+  return store;
+};
