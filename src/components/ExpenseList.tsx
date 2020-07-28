@@ -6,13 +6,13 @@ import FilterHeader from './FilterHeader';
 
 const ExpenseList: FC = (props: any) => (
   <>
-    <h1>List of your expenses</h1>
+    <h1>Viewing {props.expenses.length} expenses</h1>
     <FilterHeader />
     <ExpenseTable expenses={props.expenses} />
   </>
 );
 
-const filterExpenses = (expenses: any, {text, sortBy, startDate, endDate}: any) => {
+const filterExpenses = (expenses: any, {text, startDate, endDate}: any) => {
   return expenses.filter((expense: any) => {
     const createdAtMoment = moment(expense.createdAt);
     const startDateMatch = startDate ? startDate.isSameOrBefore(createdAtMoment, 'day') : true; 

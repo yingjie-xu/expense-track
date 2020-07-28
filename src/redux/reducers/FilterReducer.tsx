@@ -1,7 +1,5 @@
 import { 
-  SET_FILTER_TEXT, 
-  SORT_BY_DATE, 
-  SORT_BY_AMOUNT, 
+  SET_FILTER_TEXT,
   SET_START_DATE, 
   SET_END_DATE 
 } from "../ActionTypes";
@@ -10,7 +8,6 @@ import moment from "moment";
 
 const filterReducer: Reducer  = (prevState = {
   text: '',
-  sortBy: 'date',
   startDate: moment().startOf('month'),
   endDate: moment().endOf('month')
 }, action)=> {
@@ -19,16 +16,6 @@ const filterReducer: Reducer  = (prevState = {
       return {
         ...prevState,
         text: action.text
-      };
-    case SORT_BY_DATE:
-      return {
-        ...prevState,
-        sortBy: 'date'
-      };
-    case SORT_BY_AMOUNT:
-      return {
-        ...prevState,
-        sortBy: 'amount'
       };
     case SET_START_DATE:
       return {

@@ -33,6 +33,7 @@ const columns = [
     title: 'Amount',
     dataIndex: 'amount',
     key: 'amount',
+    render: (amount: number) => amount / 100,
     sorter: (a: any, b: any) => a.amount - b.amount
   },
   {

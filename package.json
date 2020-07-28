@@ -11,6 +11,8 @@
     "@types/node": "^12.0.0",
     "antd": "^4.4.2",
     "craco-less": "^1.17.0",
+    "firebase": "^7.16.1",
+    "firebase-tools": "^8.6.0",
     "history": "^5.0.0",
     "moment": "^2.27.0",
     "react": "^16.13.1",
@@ -19,6 +21,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "typescript": "~3.7.2",
     "uuid": "^8.2.0"
   },

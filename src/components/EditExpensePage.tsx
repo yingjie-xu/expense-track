@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import ExpenseForm from './ExpenseForm';
 import { connect } from 'react-redux';
-import { removeExpense, editExpense } from '../redux/ExpenseActions';
+import { startRemoveExpense, startEditExpense } from '../redux/ExpenseActions';
 
 const EditExpensePage: FC = (props : any) => {
   const id = props.match.params.id;
@@ -11,13 +11,13 @@ const EditExpensePage: FC = (props : any) => {
       <h1>Editing Expense with Id: {id}</h1>
       <ExpenseForm 
         onFinish={(expense: any) => {
-          props.editExpense(id, expense);
+          props.startEditExpense(id, expense);
           props.history.push('/dashboard');
         }}
         expense={props.expense}
         isEdit={true}
         onDelete={() => {
-          props.removeExpense(id)
+          props.startRemoveExpense(id)
           props.history.push('/dashboard');
         }}
       />
@@ -33,8 +33,8 @@ const mapStateToProps = (state : any, props : any) => {
 
 const mapDispatchToProps = (dispatch : any) => {
   return {
-    removeExpense: (id: string) => dispatch(removeExpense(id)),
-    editExpense: (id: string, expense: any) => dispatch(editExpense(id, expense))
+    startRemoveExpense: (id: string) => dispatch(startRemoveExpense(id)),
+    startEditExpense: (id: string, expense: any) => dispatch(startEditExpense(id, expense))
   }
 }
 

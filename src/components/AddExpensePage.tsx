@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import ExpenseForm from './ExpenseForm';
 import { connect } from 'react-redux';
-import { addExpense } from '../redux/ExpenseActions';
+import { startAddExpense } from '../redux/ExpenseActions';
 import { withRouter } from 'react-router-dom';
 
 const AddExpensePage: FC = (props:any) => (
@@ -9,7 +9,7 @@ const AddExpensePage: FC = (props:any) => (
     <h1>Create a new expense</h1>
     <ExpenseForm 
       onFinish={(expense: any) => {
-        props.addExpense(expense);
+        props.startAddExpense(expense);
         props.history.push('/dashboard');
       }}
       isEdit={false}
@@ -19,7 +19,7 @@ const AddExpensePage: FC = (props:any) => (
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    addExpense: (expense: any) => dispatch(addExpense(expense))
+    startAddExpense: (expense: any) => dispatch(startAddExpense(expense))
   };
 }
 

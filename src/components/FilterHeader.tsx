@@ -16,9 +16,9 @@ const FilterHeader: FC = (props: any) => (
     />
     <RangePicker 
       allowClear
-      onChange={({startDate, endDate}: any) => {
-        props.setStartDate(startDate);
-        props.setEndDate(endDate);
+      onChange={(date: any) => {
+        props.setStartDate(date ? date[0] : null);
+        props.setEndDate(date ? date[1] : null);
       }}
       defaultValue={[props.startDate, props.endDate]}
     />

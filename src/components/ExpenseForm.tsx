@@ -22,6 +22,9 @@ const ExpenseForm: FC<Props> = (props: any) => {
   }
 
   const onFinish = (values: any) => {
+    values.amount *= 100;
+    values.createdAt = values.createdAt.valueOf()
+    console.log(values)
     props.onFinish(values);
   }
 
@@ -69,13 +72,14 @@ const ExpenseForm: FC<Props> = (props: any) => {
         </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit">Submit</Button>
-          <Button htmlType="button" onClick={() => form.resetFields()}>
-            Reset
-          </Button>
+          {!props.isEdit &&
+            <Button htmlType="button" onClick={() => form.resetFields()}>
+              Reset
+            </Button>
+          }
           {props.isEdit && 
             <Button htmlType="button" onClick={() => {
-              console.log('delete')
-              props.onDelete()
+              props.onDelete();
             }}>
               Delete
             </Button>
