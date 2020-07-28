@@ -4,8 +4,6 @@ import { Button } from 'antd';
 import { connect } from 'react-redux';
 import { startLogout } from '../redux/AuthActions';
 import { firebase } from '../firebase/Firebase';
-import ReactDOM from 'react-dom';
-import { jsx } from '../index';
 import { startSetExpenses } from '../redux/ExpenseActions';
 import { login, logout } from '../redux/AuthActions';
 

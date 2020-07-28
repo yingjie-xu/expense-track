@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import Header from '../components/Header';
-import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import DashboardPage from '../components/DashboardPage';
 import AddExpensePage from '../components/AddExpensePage';
 import EditExpensePage from '../components/EditExpensePage';
