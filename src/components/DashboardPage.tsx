@@ -4,7 +4,6 @@ import ExpenseList from './ExpenseList';
 
 const DashboardPage: FC = (props:any) => (
   <>
-    <h1>Dashboard</h1>
     <ExpenseList />
   </>
 )

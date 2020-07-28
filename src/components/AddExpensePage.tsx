@@ -3,10 +3,14 @@ import ExpenseForm from './ExpenseForm';
 import { connect } from 'react-redux';
 import { startAddExpense } from '../redux/ExpenseActions';
 import { withRouter } from 'react-router-dom';
+import { PageHeader } from 'antd';
 
 const AddExpensePage: FC = (props:any) => (
   <>
-    <h1>Create a new expense</h1>
+    <PageHeader 
+      title={`Create a new expense`}
+      style={{padding: '0', paddingLeft: '24px'}}
+    />
     <ExpenseForm 
       onFinish={(expense: any) => {
         props.startAddExpense(expense);

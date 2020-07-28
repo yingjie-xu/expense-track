@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
-import { Button } from 'antd';
+import { Button, Menu, PageHeader } from 'antd';
 import { connect } from 'react-redux';
 import { startLogout } from '../redux/AuthActions';
 import { firebase } from '../firebase/Firebase';
@@ -28,10 +28,23 @@ const Header: FC = (props: any) => {
     <>
       {props.isAuthed &&
         <>
-          <h1>Expense Track App</h1>
-          <NavLink to="/dashboard" exact>Dashboard</NavLink>
-          <NavLink to="/create">Create Expense</NavLink>
-          <Button onClick={() => props.dispatch(startLogout())}>Logout</Button>
+          <PageHeader
+            title="Expense Track App"
+            subTitle="Start tracking your expenses here"
+            extra={[
+              <Button key="logout" onClick={() => props.dispatch(startLogout())}>Logout</Button>
+            ]}
+          >
+            <Menu mode="horizontal">
+              <Menu.Item key="dashboard" >
+                <NavLink to="/dashboard" exact>Dashboard</NavLink>
+              </Menu.Item>
+              <Menu.Item key="create" >
+                <NavLink to="/create">Create new expense</NavLink>
+              </Menu.Item>
+            </Menu>
+          </PageHeader>
+
         </>
       }
     </>

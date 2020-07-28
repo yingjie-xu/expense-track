@@ -3,10 +3,14 @@ import moment from 'moment';
 import { connect } from 'react-redux';
 import ExpenseTable from './ExpenseTable';
 import FilterHeader from './FilterHeader';
+import { PageHeader } from 'antd';
 
 const ExpenseList: FC = (props: any) => (
   <>
-    <h1>Viewing {props.expenses.length} expenses</h1>
+    <PageHeader 
+      title={`Viewing ${props.expenses.length} expenses`}
+      style={{padding: '0', paddingLeft: '24px'}}
+    />
     <FilterHeader />
     <ExpenseTable expenses={props.expenses} />
   </>

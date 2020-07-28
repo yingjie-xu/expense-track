@@ -2,13 +2,17 @@ import React, { FC } from 'react';
 import ExpenseForm from './ExpenseForm';
 import { connect } from 'react-redux';
 import { startRemoveExpense, startEditExpense } from '../redux/ExpenseActions';
+import { PageHeader } from 'antd';
 
 const EditExpensePage: FC = (props : any) => {
   const id = props.match.params.id;
 
   return (
     <>
-      <h1>Editing Expense with Id: {id}</h1>
+      <PageHeader 
+        title={`Editing Expense`}
+        style={{padding: '0', paddingLeft: '24px'}}
+      />
       <ExpenseForm 
         onFinish={(expense: any) => {
           props.startEditExpense(id, expense);

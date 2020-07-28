@@ -5,6 +5,7 @@ import App from './App';
 import { Provider } from 'react-redux';
 import storeConfig from './redux/StoreConfig';
 import { startSetExpenses } from './redux/ExpenseActions';
+import { Spin } from 'antd';
 
 
 const store = storeConfig();
@@ -15,7 +16,7 @@ export const jsx = (
   </Provider>
 )
 
-ReactDOM.render(<p>loading</p>, document.getElementById('root'));
+ReactDOM.render(<div className="login-page"><Spin /></div>, document.getElementById('root'));
 
 store.dispatch(startSetExpenses()).then(() => {
   ReactDOM.render(

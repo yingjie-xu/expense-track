@@ -2,12 +2,16 @@ import React, { FC } from 'react';
 import { Button } from 'antd';
 import { connect } from 'react-redux';
 import { startLogin } from '../redux/AuthActions';
+import '../styles/LoginPage.css';
 
 const LoginPage: FC = (props: any) => (
-  <>
-    <h1>Plase log in here</h1>
-    <Button onClick={props.startLogin}>Login</Button>
-  </>
+  <div className="login-page">
+    <div>
+      <h1>Expense Track App</h1>
+      <p>This is an app for tracking your everyday expenses</p>
+      <Button onClick={props.startLogin}>Login with Google</Button>
+    </div>
+  </div>
 )
 
 const mapDispatchToProps = (dispatch : any) => ({
