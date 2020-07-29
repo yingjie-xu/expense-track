@@ -44,7 +44,6 @@ const Header: FC = (props: any) => {
               </Menu.Item>
             </Menu>
           </PageHeader>
-
         </>
       }
     </>

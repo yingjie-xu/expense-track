@@ -6,7 +6,7 @@ import '../styles/LoginPage.css';
 
 const LoginPage: FC = (props: any) => (
   <div className="login-page">
-    <div>
+    <div className="login-box">
       <h1>Expense Track App</h1>
       <p>This is an app for tracking your everyday expenses</p>
       <Button onClick={props.startLogin}>Login with Google</Button>

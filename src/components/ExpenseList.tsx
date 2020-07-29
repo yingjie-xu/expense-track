@@ -6,14 +6,14 @@ import FilterHeader from './FilterHeader';
 import { PageHeader } from 'antd';
 
 const ExpenseList: FC = (props: any) => (
-  <>
+  <div style={{padding: '0', paddingLeft: '24px', paddingRight: '24px'}}>
     <PageHeader 
       title={`Viewing ${props.expenses.length} expenses`}
       style={{padding: '0', paddingLeft: '24px'}}
     />
     <FilterHeader />
     <ExpenseTable expenses={props.expenses} />
-  </>
+  </div>
 );
 
 const filterExpenses = (expenses: any, {text, startDate, endDate}: any) => {

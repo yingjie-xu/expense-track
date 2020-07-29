@@ -11,7 +11,7 @@ const EditExpensePage: FC = (props : any) => {
     <>
       <PageHeader 
         title={`Editing Expense`}
-        style={{padding: '0', paddingLeft: '24px'}}
+        style={{padding: '0', paddingLeft: '48px'}}
       />
       <ExpenseForm 
         onFinish={(expense: any) => {

@@ -9,6 +9,11 @@ type Props = {
   onDelete?: any
 };
 
+const layout = {
+  labelCol: { span: 4 },
+  wrapperCol: { span: 18 },
+};
+
 const ExpenseForm: FC<Props> = (props: any) => {
   const [form] = Form.useForm();
   
@@ -30,7 +35,12 @@ const ExpenseForm: FC<Props> = (props: any) => {
 
   return (
     <>
-      <Form form={form} onFinish={onFinish} initialValues={initialValues}>
+      <Form 
+        form={form} 
+        onFinish={onFinish} 
+        initialValues={initialValues}
+        {...layout}
+      >
         <Form.Item
           label="Description:"
           name="description"
@@ -49,7 +59,7 @@ const ExpenseForm: FC<Props> = (props: any) => {
           rules={[{ required: true, message: 'Please enter amount!' }]}
         >
           <InputNumber 
-            style={{width: "auto"}}
+            style={{width: "100%"}}
             min={0}
             precision={2}
           />
@@ -58,7 +68,7 @@ const ExpenseForm: FC<Props> = (props: any) => {
           label="Created at:"
           name="createdAt"
         >
-          <DatePicker/>
+          <DatePicker style={{width: "100%"}}/>
         </Form.Item>
         <Form.Item
           label="Note:"
